@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+      integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+      integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="login-registration">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5"></div>
+          
+            <div class="login-registration__form">
+              <div class="login-registration__form--heading">
+                <p class="js--login-form-btn text-uppercase active">SIGN IN</p>
+
+                <p class="js--registration-form-btn text-uppercase">SIGN UP</p>
+              </div>
+              <p class="d-none" data-tab id="js--which-tab"></p>
+
+              <div class="login-form show" id="js--login-form">
+                <!-- start social Login -->
+                <div class="social-login text-center">
+                  <p class="social-text">
+                    Login easily with your facebook or google account
+                  </p>
+
+                  <div class="d-flex justify-content-center align-items-center">
+                    <button
+                      class="btn btn-social-facebook">
+                      <img src="images/icon-fb.png" alt="" />
+                      Facebook
+                    </button>
+                    <button
+                      class="btn btn-social-google">
+                      <img src="images/icon-google.png" alt="" />
+                      Google
+                    </button>
+                  </div>
+                  <p class="text mb-0">OR</p>
+                  <p class="login-text mb-0">
+                    Login with your email or phone number
+                  </p>
+                </div>
+                <!-- end-Social Login -->
+              </div>
+              <form
+                id="loginForm"
+                class="login-registration__form--content"
+                action="/logincheck"
+                method="post"
+              >
+                <div class="form-group">
+                  <label for="email">Email or phone</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <img src="images/icon-email.png" alt="" />
+                      </span>
+                    </div>
+                    <input
+                      id="j_username"
+                      name="j_username"
+                      class="form-control"
+                      data-validation-type="not-blank"
+                      placeholder="Email or phone"
+                      validation="required"
+                      required="required"
+                      type="text"
+                      value
+                    />
+                    <span class="validation-icon"></span>
+                    <p class="validation-icon"></p>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <img src="images/icon-password.png" alt="" />
+                      </span>
+                    </div>
+                    <input
+                      id="j_password"
+                      name="j_password"
+                      class="form-control"
+                      data-validation-type="not-blank"
+                      placeholder="password"
+                      validation="required"
+                      required="required"
+                      type="password"
+                      value
+                    />
+
+                    <div class="input-group-append">
+                      <span
+                        class="input-group-text visible-password js--visible-password"
+                      >
+                        <i class="ion-eye"></i>
+                      </span>
+                    </div>
+                    <span class="validation-icon"></span>
+                    <p class="validation-text"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                      <input
+                        id="rememberme"
+                        name="_spring_security_remember_me"
+                        class="custom-control-input"
+                        checked="checked"
+                        type="checkbox"
+                        value="true"
+                      />
+                      <input
+                        type="hidden"
+                        name="__spring_security_remember_me"
+                        value="on"
+                      />
+                      <label class="custom-control-label" for="rememberme">
+                        Remember Me
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col text-right">
+                    <a class="forget-password-link" href="#">
+                      Forgot Password?
+                    </a>
+                  </div>
+                </div>
+                <button
+                  data-validation-type="form-submit"
+                  class="btn btn-block"
+                  type="submit"
+                >
+                  Sign In
+                </button>
+                <span class="validation-icon"></span>
+                <p class="validation-text"></p>
+              </form>
+
+              <div class="login-registration__form--footer">
+                <p>
+                  Don’t have an account?
+                  <a class="js--registration-form-btn" href="#"> Sign Up Now</a>
+                </p>
+              </div>
+            </div>
+
+            
+        </div>
+        
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="scripts.js">
+
+    </script>
+  </body>
+</html>
